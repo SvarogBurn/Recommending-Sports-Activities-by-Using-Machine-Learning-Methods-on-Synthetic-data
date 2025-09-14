@@ -1,0 +1,15 @@
+Silhouette score: 0.410
+Noise ratio: 0
+Number of users in each cluster:
+Cluster 0: 430
+Cluster 1: 124
+Cluster 2: 446
+
+ANOVA results (statistical significance of differences):
+Emotional Regulation and Perseverance: F=887.788, p=0.000
+Resource Accessibility and Social Capital: F=722.759, p=0.000
+
+Cluster centers:
+Cluster 0: Emotional Regulation and Perseverance=0.460, Resource Accessibility and Social Capital=-0.723
+Cluster 1: Emotional Regulation and Perseverance=1.365, Resource Accessibility and Social Capital=1.508
+Cluster 2: Emotional Regulation and Perseverance=-0.823, Resource Accessibility and Social Capital=0.278

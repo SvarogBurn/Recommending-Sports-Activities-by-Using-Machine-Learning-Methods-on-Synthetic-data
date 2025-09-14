@@ -1,0 +1,347 @@
+HDBSCAN SPORTS CLUSTERING ANALYSIS REPORT
+==================================================
+
+Methodology:
+- Clustering performed using HDBSCAN on 8 factors
+- Parameters: min_cluster_size=3, min_samples=2
+- Cluster characterization based on: attribute_score = Σ(loading × cluster_center)
+- Attributes ranked by |attribute_score|
+- Significance testing: ANOVA for factors, ANOVA for attributes
+
+
+CLUSTER ANALYSIS RESULTS
+==================================================
+
+Clusters found: 8
+Silhouette score: 0.4444 (higher is better)
+Calinski-Harabasz index: 25.31 (higher is better)
+Davies-Bouldin index: 0.8497 (lower is better)
+Noise ratio: 37.8%
+
+Cluster sizes:
+- Noise: 34 sports (37.8%)
+- Cluster 0: 3 sports (3.3%)
+- Cluster 1: 3 sports (3.3%)
+- Cluster 2: 8 sports (8.9%)
+- Cluster 3: 7 sports (7.8%)
+- Cluster 4: 5 sports (5.6%)
+- Cluster 5: 11 sports (12.2%)
+- Cluster 6: 9 sports (10.0%)
+- Cluster 7: 10 sports (11.1%)
+
+
+DETAILED CLUSTER MEMBERSHIP
+================================================================================
+
+NOISE SPORTS (34 sports):
+--------------------------------------------------------------------------------
+Alpinism, Archery, Boomerang, Bungee Jumping, Calisthenics
+Camping, Cheerleading, Chess, Crossfit, Cycling
+Dance, Fishing, Golf, Gun Sports, Gym
+Hammer Throw, Horseback Riding, Ice Skating, Javelin, Paintball
+Pilates, Rock Climbing, Rodeo, Running, Scuba Diving
+Soccer, Sumo, Swimming, Table Tennis, Tennis
+Trampolining, Walking, Weightlifting, Yoga
+
+CLUSTER 0 (3 sports):
+--------------------------------------------------------------------------------
+Boules, Bowling, Pool
+
+CLUSTER 1 (3 sports):
+--------------------------------------------------------------------------------
+Canoeing, Hiking, Kayaking
+
+CLUSTER 2 (8 sports):
+--------------------------------------------------------------------------------
+Boxing, Fencing, Grappling, Jiu-Jitsu, Judo
+Karate, Taekwondo, Wrestling
+
+CLUSTER 3 (7 sports):
+--------------------------------------------------------------------------------
+Aerobatics, Gliding, Hang Gliding, Motorcycle Racing, Parachuting
+Paragliding, Skydiving
+
+CLUSTER 4 (5 sports):
+--------------------------------------------------------------------------------
+Aerial Silk, Figure Skating, Gymnastics, Pole Sports, Trapeze
+
+CLUSTER 5 (11 sports):
+--------------------------------------------------------------------------------
+Baseball, Basketball, Cricket, Football, Handball
+Hockey, Lacrosse, Polo, Rugby, Volleyball
+Water Polo
+
+CLUSTER 6 (9 sports):
+--------------------------------------------------------------------------------
+Badminton, Disc Sports, Dodgeball, Football Tennis, Frisbee
+Longball, Roller Skating, Sailing, Tag Games
+
+CLUSTER 7 (10 sports):
+--------------------------------------------------------------------------------
+Athletics, HIIT, Kite Sports, Mountain Biking, Parkour
+Skateboarding, Skiing, Snowboarding, Surfing, Windsurfing
+
+
+DETAILED NOISE ANALYSIS
+================================================================================
+Noise sports didn't fit into clusters due to:
+1. Unique factor combinations not shared with others
+2. Falling in low-density regions between clusters
+3. Characteristics not aligning strongly with any cluster
+
+Sport                |  Outlier |  Dist to |  Closest |  Dist to | Dominant Factors                         | Reasons
+                     |    Score | Centroid |  Cluster |  Cluster |                                          | 
+---------------------+----------+----------+----------+----------+------------------------------------------+---------------------
+Alpinism             |    0.614 |    6.563 |        1 |    6.061 | f8, resource investment: 6.23, f6, collaborative dynamics: -1.09, f4, kinesthetic intelligence: 0.97 | high outlier score; large distance to nearest cluster; divergent from overall centroid
+Archery              |    0.190 |    4.437 |        0 |    3.256 | f1, metabolic demand: -2.89, f2, neurocognitive precision: 2.18, f6, collaborative dynamics: -1.31 | large distance to nearest cluster; divergent from overall centroid
+Boomerang            |    0.026 |    2.974 |        0 |    2.442 | f8, resource investment: -2.03, f1, metabolic demand: -1.23, f4, kinesthetic intelligence: -1.05 | large distance to nearest cluster; divergent from overall centroid
+Bungee Jumping       |    0.551 |    5.934 |        1 |    5.447 | f3, risk modulation: 4.02, f2, neurocognitive precision: -3.33, f1, metabolic demand: -1.98 | high outlier score; large distance to nearest cluster; divergent from overall centroid
+Calisthenics         |    0.030 |    2.714 |        4 |    2.148 | f4, kinesthetic intelligence: 1.48, f2, neurocognitive precision: -1.15, f6, collaborative dynamics: -1.03 | large distance to nearest cluster; divergent from overall centroid
+Camping              |    0.321 |    4.906 |        1 |    3.663 | f2, neurocognitive precision: -2.98, f8, resource investment: 2.73, f6, collaborative dynamics: 1.42 | large distance to nearest cluster; divergent from overall centroid
+Cheerleading         |    0.027 |    3.488 |        4 |    2.519 | f6, collaborative dynamics: 2.38, f4, kinesthetic intelligence: 2.08, f7, biomechanical advantage: -1.26 | large distance to nearest cluster; divergent from overall centroid
+Chess                |    0.531 |    5.413 |        0 |    4.701 | f4, kinesthetic intelligence: -3.04, f5, environmental dependency: -2.57, f1, metabolic demand: -2.10 | high outlier score; large distance to nearest cluster; divergent from overall centroid
+Crossfit             |    0.043 |    2.164 |        2 |    2.142 | f1, metabolic demand: 1.45, f5, environmental dependency: -1.03, f7, biomechanical advantage: -0.95 | large distance to nearest cluster; divergent from overall centroid
+Cycling              |    0.011 |    2.571 |        7 |    1.823 | f1, metabolic demand: 1.22, f6, collaborative dynamics: -1.21, f3, risk modulation: -1.03 | large distance to nearest cluster; divergent from overall centroid
+Dance                |    0.061 |    3.033 |        4 |    2.142 | f4, kinesthetic intelligence: 2.11, f3, risk modulation: -1.47, f7, biomechanical advantage: -1.18 | large distance to nearest cluster; divergent from overall centroid
+Fishing              |    0.063 |    3.345 |        0 |    2.202 | f1, metabolic demand: -2.18, f2, neurocognitive precision: -1.24, f4, kinesthetic intelligence: -1.08 | large distance to nearest cluster; divergent from overall centroid
+Golf                 |    0.061 |    2.723 |        0 |    2.047 | f1, metabolic demand: -1.70, f3, risk modulation: -1.08, f2, neurocognitive precision: 0.84 | large distance to nearest cluster; divergent from overall centroid
+Gun Sports           |    0.163 |    3.470 |        0 |    2.565 | f1, metabolic demand: -2.43, f2, neurocognitive precision: 1.31, f7, biomechanical advantage: 1.05 | large distance to nearest cluster; divergent from overall centroid
+Gym                  |    0.030 |    2.621 |        1 |    2.615 | f5, environmental dependency: -1.45, f2, neurocognitive precision: -1.30, f6, collaborative dynamics: -1.16 | large distance to nearest cluster; divergent from overall centroid
+Hammer Throw         |    0.246 |    4.027 |        1 |    3.488 | f7, biomechanical advantage: 3.14, f6, collaborative dynamics: -1.89, f2, neurocognitive precision: -0.88 | large distance to nearest cluster; divergent from overall centroid
+Horseback Riding     |    0.037 |    1.733 |        1 |    2.173 | f2, neurocognitive precision: -0.93, f3, risk modulation: 0.74, f4, kinesthetic intelligence: 0.58 | large distance to nearest cluster; divergent from overall centroid
+Ice Skating          |    0.025 |    1.797 |        4 |    1.739 | f4, kinesthetic intelligence: 1.28, f8, resource investment: -0.81, f1, metabolic demand: -0.44 | large distance to nearest cluster; divergent from overall centroid
+Javelin              |    0.302 |    4.350 |        1 |    3.853 | f7, biomechanical advantage: 3.48, f6, collaborative dynamics: -2.15, f2, neurocognitive precision: -0.60 | large distance to nearest cluster; divergent from overall centroid
+Paintball            |    0.024 |    1.931 |        6 |    1.972 | f6, collaborative dynamics: 1.49, f4, kinesthetic intelligence: -1.07, f7, biomechanical advantage: -0.70 | large distance to nearest cluster; divergent from overall centroid
+Pilates              |    0.016 |    2.807 |        4 |    2.359 | f7, biomechanical advantage: -1.51, f5, environmental dependency: -1.30, f2, neurocognitive precision: -1.14 | large distance to nearest cluster; divergent from overall centroid
+Rock Climbing        |    0.141 |    3.015 |        7 |    3.100 | f8, resource investment: 2.22, f1, metabolic demand: 1.12, f6, collaborative dynamics: -0.94 | large distance to nearest cluster; divergent from overall centroid
+Rodeo                |    0.022 |    2.103 |        2 |    2.600 | f3, risk modulation: 1.95, f7, biomechanical advantage: 0.75, f8, resource investment: -0.33 | large distance to nearest cluster; divergent from overall centroid
+Running              |    0.018 |    3.291 |        7 |    2.300 | f3, risk modulation: -1.65, f7, biomechanical advantage: -1.46, f1, metabolic demand: 1.46 | large distance to nearest cluster; divergent from overall centroid
+Scuba Diving         |    0.025 |    1.721 |        3 |    1.982 | f7, biomechanical advantage: -0.91, f8, resource investment: 0.87, f6, collaborative dynamics: -0.73 | large distance to nearest cluster; divergent from overall centroid
+Soccer               |    0.549 |    5.217 |        6 |    5.017 | f5, environmental dependency: 3.04, f6, collaborative dynamics: 2.75, f8, resource investment: -2.41 | high outlier score; large distance to nearest cluster; divergent from overall centroid
+Sumo                 |    0.010 |    3.226 |        2 |    2.327 | f7, biomechanical advantage: 2.25, f5, environmental dependency: -1.77, f3, risk modulation: 1.06 | large distance to nearest cluster; divergent from overall centroid
+Swimming             |    0.005 |    2.537 |        7 |    2.324 | f6, collaborative dynamics: -1.36, f7, biomechanical advantage: 1.17, f3, risk modulation: -1.09 | large distance to nearest cluster; divergent from overall centroid
+Table Tennis         |    0.005 |    2.882 |        6 |    2.715 | f3, risk modulation: -2.10, f2, neurocognitive precision: 1.64, f8, resource investment: -0.64 | large distance to nearest cluster; divergent from overall centroid
+Tennis               |    0.059 |    2.712 |        7 |    2.568 | f3, risk modulation: -1.88, f2, neurocognitive precision: 1.45, f5, environmental dependency: 1.02 | large distance to nearest cluster; divergent from overall centroid
+Trampolining         |    0.008 |    1.903 |        7 |    2.009 | f8, resource investment: -1.19, f4, kinesthetic intelligence: 0.92, f6, collaborative dynamics: -0.70 | large distance to nearest cluster; divergent from overall centroid
+Walking              |    0.033 |    3.167 |        1 |    2.309 | f2, neurocognitive precision: -2.13, f4, kinesthetic intelligence: -1.25, f7, biomechanical advantage: -1.11 | large distance to nearest cluster; divergent from overall centroid
+Weightlifting        |    0.008 |    1.560 |        2 |    2.066 | f6, collaborative dynamics: -0.80, f5, environmental dependency: -0.73, f7, biomechanical advantage: 0.46 | large distance to nearest cluster; divergent from overall centroid
+Yoga                 |    0.416 |    5.197 |        4 |    3.857 | f4, kinesthetic intelligence: 3.46, f1, metabolic demand: -2.74, f3, risk modulation: -1.82 | large distance to nearest cluster; divergent from overall centroid
+
+
+FACTOR SIGNIFICANCE ACROSS CLUSTERS (ANOVA)
+--------------------------------------------------
+Factor                         |  F-statistic |      p-value | Significant (p<0.05)
+-------------------------------+--------------+--------------+---------------------
+f1, metabolic demand           |       46.869 |     2.55e-19 |         Yes         
+f2, neurocognitive precision   |       27.282 |     1.10e-14 |         Yes         
+f3, risk modulation            |       19.298 |     5.45e-12 |         Yes         
+f4, kinesthetic intelligence   |       47.710 |     1.76e-19 |         Yes         
+f5, environmental dependency   |       29.234 |     2.99e-15 |         Yes         
+f6, collaborative dynamics     |       47.220 |     2.18e-19 |         Yes         
+f7, biomechanical advantage    |       11.990 |     1.00e-08 |         Yes         
+f8, resource investment        |        8.468 |     1.03e-06 |         Yes         
+
+
+ATTRIBUTE SIGNIFICANCE ACROSS CLUSTERS (ANOVA)
+--------------------------------------------------
+Attribute                      |  F-statistic |      p-value | Significant (p<0.05)
+-------------------------------+--------------+--------------+---------------------
+solo_practicability            |       74.384 |     1.40e-23 |         Yes         
+competitive_level              |       49.283 |     9.00e-20 |         Yes         
+balance                        |       49.156 |     9.50e-20 |         Yes         
+grip_strength                  |       49.120 |     9.64e-20 |         Yes         
+social_interaction             |       48.435 |     1.29e-19 |         Yes         
+rhythm_musicality              |       48.220 |     1.42e-19 |         Yes         
+endurance                      |       46.855 |     2.56e-19 |         Yes         
+contact_level                  |       46.613 |     2.85e-19 |         Yes         
+learning_curve                 |       46.049 |     3.67e-19 |         Yes         
+fearlessness                   |       44.795 |     6.46e-19 |         Yes         
+coach_required                 |       44.334 |     7.99e-19 |         Yes         
+tactical_thinking              |       43.365 |     1.25e-18 |         Yes         
+vision_range                   |       42.714 |     1.71e-18 |         Yes         
+flexibility                    |       41.688 |     2.80e-18 |         Yes         
+risk_tolerance                 |       40.745 |     4.44e-18 |         Yes         
+speed                          |       39.787 |     7.18e-18 |         Yes         
+consistency_demand             |       39.206 |     9.65e-18 |         Yes         
+accessibility                  |       39.070 |     1.03e-17 |         Yes         
+cultural_popularity            |       37.172 |     2.80e-17 |         Yes         
+aerobic                        |       35.863 |     5.70e-17 |         Yes         
+weather_sensitivity            |       33.011 |     2.89e-16 |         Yes         
+height                         |       32.931 |     3.03e-16 |         Yes         
+physical_health_MET            |       32.300 |     4.42e-16 |         Yes         
+cognitive_load                 |       31.372 |     7.76e-16 |         Yes         
+fun_factor                     |       30.871 |     1.06e-15 |         Yes         
+patience                       |       30.185 |     1.63e-15 |         Yes         
+seasonality                    |       28.769 |     4.06e-15 |         Yes         
+coordination                   |       28.140 |     6.16e-15 |         Yes         
+spatial_awareness              |       27.075 |     1.27e-14 |         Yes         
+weight                         |       26.432 |     1.99e-14 |         Yes         
+height_advantage               |       26.170 |     2.39e-14 |         Yes         
+weight_advantage               |       25.660 |     3.44e-14 |         Yes         
+mental_focus                   |       24.965 |     5.69e-14 |         Yes         
+timing                         |       24.849 |     6.20e-14 |         Yes         
+reaction_time                  |       24.158 |     1.04e-13 |         Yes         
+explosiveness                  |       23.046 |     2.43e-13 |         Yes         
+strength                       |       23.027 |     2.47e-13 |         Yes         
+agility                        |       19.292 |     5.48e-12 |         Yes         
+difficulty_to_organize         |       19.084 |     6.59e-12 |         Yes         
+injury_risk                    |       18.562 |     1.06e-11 |         Yes         
+precision                      |       16.602 |     6.72e-11 |         Yes         
+impulsivity                    |       16.527 |     7.24e-11 |         Yes         
+special_equipment_count        |       15.850 |     1.42e-10 |         Yes         
+avg_session_duration_hours     |       13.102 |     2.72e-09 |         Yes         
+cost_category                  |        9.589 |     2.15e-07 |         Yes         
+
+
+CLUSTER CENTERS
+--------------------------------------------------
+Cluster 0: f1, metabolic demand=-2.018, f2, neurocognitive precision=-0.181, f3, risk modulation=-0.743, f4, kinesthetic intelligence=-0.792, f5, environmental dependency=-0.498, f6, collaborative dynamics=0.389, f7, biomechanical advantage=0.580, f8, resource investment=-0.475
+Cluster 1: f1, metabolic demand=-0.057, f2, neurocognitive precision=-1.928, f3, risk modulation=-0.177, f4, kinesthetic intelligence=-0.581, f5, environmental dependency=0.466, f6, collaborative dynamics=-0.475, f7, biomechanical advantage=0.627, f8, resource investment=0.761
+Cluster 2: f1, metabolic demand=0.912, f2, neurocognitive precision=0.511, f3, risk modulation=0.626, f4, kinesthetic intelligence=-0.523, f5, environmental dependency=-1.754, f6, collaborative dynamics=0.279, f7, biomechanical advantage=0.034, f8, resource investment=-0.183
+Cluster 3: f1, metabolic demand=-0.528, f2, neurocognitive precision=1.349, f3, risk modulation=1.685, f4, kinesthetic intelligence=-0.031, f5, environmental dependency=1.059, f6, collaborative dynamics=-0.602, f7, biomechanical advantage=-1.047, f8, resource investment=0.137
+Cluster 4: f1, metabolic demand=-0.333, f2, neurocognitive precision=-0.218, f3, risk modulation=0.276, f4, kinesthetic intelligence=2.296, f5, environmental dependency=-0.883, f6, collaborative dynamics=0.051, f7, biomechanical advantage=-0.467, f8, resource investment=-0.109
+Cluster 5: f1, metabolic demand=0.533, f2, neurocognitive precision=0.684, f3, risk modulation=-0.141, f4, kinesthetic intelligence=-0.276, f5, environmental dependency=0.383, f6, collaborative dynamics=1.493, f7, biomechanical advantage=0.965, f8, resource investment=0.527
+Cluster 6: f1, metabolic demand=0.104, f2, neurocognitive precision=-0.297, f3, risk modulation=-0.694, f4, kinesthetic intelligence=-0.397, f5, environmental dependency=0.295, f6, collaborative dynamics=0.614, f7, biomechanical advantage=-0.332, f8, resource investment=-0.480
+Cluster 7: f1, metabolic demand=0.939, f2, neurocognitive precision=0.012, f3, risk modulation=-0.153, f4, kinesthetic intelligence=0.031, f5, environmental dependency=0.800, f6, collaborative dynamics=-0.999, f7, biomechanical advantage=-0.547, f8, resource investment=-0.492
+
+
+DETAILED CLUSTER PROFILES WITH CALCULATIONS
+================================================================================
+Attributes ranked by |attribute_score|
+
+
+CLUSTER 0 - 3 sports (3.3%)
+--------------------------------------------------------------------------------
+Attribute                      |      Score |    |Score| | Calculation
+-------------------------------+------------+------------+-----------------------------------------
+accessibility                  |      6.757 |      6.757 | (-1.050 × -2.018) + (-1.853 × -0.181) + (-3.376 × -0.743) + (-0.826 × -0.792) + (-0.551 × -0.498) + (0.263 × 0.389) + (0.293 × 0.580) + (-1.253 × -0.475) = 6.757
+patience                       |      6.412 |      6.412 | (-2.583 × -2.018) + (1.270 × -0.181) + (-0.624 × -0.743) + (-0.748 × -0.792) + (0.549 × -0.498) + (0.169 × 0.389) + (0.385 × 0.580) + (-0.753 × -0.475) = 6.412
+weight                         |      4.500 |      4.500 | (-0.399 × -2.018) + (-0.737 × -0.181) + (-0.310 × -0.743) + (-1.481 × -0.792) + (-0.708 × -0.498) + (-0.011 × 0.389) + (2.904 × 0.580) + (-0.267 × -0.475) = 4.500
+precision                      |      4.048 |      4.048 | (-1.641 × -2.018) + (1.894 × -0.181) + (-0.664 × -0.743) + (-0.095 × -0.792) + (0.175 × -0.498) + (-0.124 × 0.389) + (0.263 × 0.580) + (-1.040 × -0.475) = 4.048
+height                         |      3.975 |      3.975 | (-0.029 × -2.018) + (-0.517 × -0.181) + (-1.176 × -0.743) + (-1.405 × -0.792) + (0.328 × -0.498) + (0.477 × 0.389) + (2.982 × 0.580) + (-0.179 × -0.475) = 3.975
+solo_practicability            |      3.933 |      3.933 | (-2.113 × -2.018) + (-1.828 × -0.181) + (-0.882 × -0.743) + (-0.648 × -0.792) + (-0.340 × -0.498) + (-3.909 × 0.389) + (-1.564 × 0.580) + (-0.897 × -0.475) = 3.933
+grip_strength                  |     -3.879 |      3.879 | (1.024 × -2.018) + (-0.470 × -0.181) + (0.382 × -0.743) + (1.784 × -0.792) + (-0.118 × -0.498) + (-0.097 × 0.389) + (-0.357 × 0.580) + (0.029 × -0.475) = -3.879
+social_interaction             |      3.594 |      3.594 | (-0.145 × -2.018) + (-1.096 × -0.181) + (-1.869 × -0.743) + (-0.572 × -0.792) + (0.039 × -0.498) + (3.014 × 0.389) + (0.113 × 0.580) + (-0.097 × -0.475) = 3.594
+endurance                      |     -3.380 |      3.380 | (1.678 × -2.018) + (-0.915 × -0.181) + (-0.374 × -0.743) + (0.408 × -0.792) + (0.084 × -0.498) + (0.083 × 0.389) + (0.125 × 0.580) + (0.373 × -0.475) = -3.380
+strength                       |     -3.363 |      3.363 | (1.267 × -2.018) + (-0.736 × -0.181) + (0.610 × -0.743) + (0.857 × -0.792) + (-0.679 × -0.498) + (-0.647 × 0.389) + (0.546 × 0.580) + (0.445 × -0.475) = -3.363
+
+================================================================================
+
+CLUSTER 1 - 3 sports (3.3%)
+--------------------------------------------------------------------------------
+Attribute                      |      Score |    |Score| | Calculation
+-------------------------------+------------+------------+-----------------------------------------
+avg_session_duration_hours     |      5.640 |      5.640 | (-1.174 × -0.057) + (-1.328 × -1.928) + (-0.527 × -0.177) + (-0.914 × -0.581) + (0.761 × 0.466) + (0.201 × -0.475) + (-0.391 × 0.627) + (3.119 × 0.761) = 5.640
+weather_sensitivity            |      5.358 |      5.358 | (-0.892 × -0.057) + (-1.302 × -1.928) + (0.150 × -0.177) + (-1.176 × -0.581) + (3.568 × 0.466) + (-0.686 × -0.475) + (-0.711 × 0.627) + (0.788 × 0.761) = 5.358
+coordination                   |     -4.483 |      4.483 | (-0.286 × -0.057) + (1.588 × -1.928) + (0.060 × -0.177) + (1.102 × -0.581) + (-0.650 × 0.466) + (0.462 × -0.475) + (0.423 × 0.627) + (-0.697 × 0.761) = -4.483
+seasonality                    |      4.411 |      4.411 | (-0.856 × -0.057) + (-1.120 × -1.928) + (0.427 × -0.177) + (-0.619 × -0.581) + (3.170 × 0.466) + (-0.128 × -0.475) + (-0.538 × 0.627) + (0.944 × 0.761) = 4.411
+solo_practicability            |      4.208 |      4.208 | (-2.113 × -0.057) + (-1.828 × -1.928) + (-0.882 × -0.177) + (-0.648 × -0.581) + (-0.340 × 0.466) + (-3.909 × -0.475) + (-1.564 × 0.627) + (-0.897 × 0.761) = 4.208
+precision                      |     -3.873 |      3.873 | (-1.641 × -0.057) + (1.894 × -1.928) + (-0.664 × -0.177) + (-0.095 × -0.581) + (0.175 × 0.466) + (-0.124 × -0.475) + (0.263 × 0.627) + (-1.040 × 0.761) = -3.873
+timing                         |     -3.760 |      3.760 | (-0.276 × -0.057) + (1.321 × -1.928) + (0.268 × -0.177) + (0.522 × -0.581) + (-0.089 × 0.466) + (0.891 × -0.475) + (0.630 × 0.627) + (-1.064 × 0.761) = -3.760
+height                         |      3.681 |      3.681 | (-0.029 × -0.057) + (-0.517 × -1.928) + (-1.176 × -0.177) + (-1.405 × -0.581) + (0.328 × 0.466) + (0.477 × -0.475) + (2.982 × 0.627) + (-0.179 × 0.761) = 3.681
+weight                         |      3.650 |      3.650 | (-0.399 × -0.057) + (-0.737 × -1.928) + (-0.310 × -0.177) + (-1.481 × -0.581) + (-0.708 × 0.466) + (-0.011 × -0.475) + (2.904 × 0.627) + (-0.267 × 0.761) = 3.650
+accessibility                  |      3.556 |      3.556 | (-1.050 × -0.057) + (-1.853 × -1.928) + (-3.376 × -0.177) + (-0.826 × -0.581) + (-0.551 × 0.466) + (0.263 × -0.475) + (0.293 × 0.627) + (-1.253 × 0.761) = 3.556
+
+================================================================================
+
+CLUSTER 2 - 8 sports (8.9%)
+--------------------------------------------------------------------------------
+Attribute                      |      Score |    |Score| | Calculation
+-------------------------------+------------+------------+-----------------------------------------
+weather_sensitivity            |     -7.388 |      7.388 | (-0.892 × 0.912) + (-1.302 × 0.511) + (0.150 × 0.626) + (-1.176 × -0.523) + (3.568 × -1.754) + (-0.686 × 0.279) + (-0.711 × 0.034) + (0.788 × -0.183) = -7.388
+seasonality                    |     -6.549 |      6.549 | (-0.856 × 0.912) + (-1.120 × 0.511) + (0.427 × 0.626) + (-0.619 × -0.523) + (3.170 × -1.754) + (-0.128 × 0.279) + (-0.538 × 0.034) + (0.944 × -0.183) = -6.549
+contact_level                  |      4.636 |      4.636 | (0.487 × 0.912) + (-0.134 × 0.511) + (-0.005 × 0.626) + (-1.133 × -0.523) + (-1.705 × -1.754) + (1.965 × 0.279) + (1.163 × 0.034) + (-0.509 × -0.183) = 4.636
+avg_session_duration_hours     |     -3.464 |      3.464 | (-1.174 × 0.912) + (-1.328 × 0.511) + (-0.527 × 0.626) + (-0.914 × -0.523) + (0.761 × -1.754) + (0.201 × 0.279) + (-0.391 × 0.034) + (3.119 × -0.183) = -3.464
+solo_practicability            |     -3.459 |      3.459 | (-2.113 × 0.912) + (-1.828 × 0.511) + (-0.882 × 0.626) + (-0.648 × -0.523) + (-0.340 × -1.754) + (-3.909 × 0.279) + (-1.564 × 0.034) + (-0.897 × -0.183) = -3.459
+cognitive_load                 |      3.360 |      3.360 | (-0.657 × 0.912) + (1.436 × 0.511) + (0.333 × 0.626) + (-0.843 × -0.523) + (-1.794 × -1.754) + (-1.234 × 0.279) + (-0.916 × 0.034) + (1.072 × -0.183) = 3.360
+competitive_level              |      2.929 |      2.929 | (-0.025 × 0.912) + (1.302 × 0.511) + (0.666 × 0.626) + (-0.223 × -0.523) + (-1.062 × -1.754) + (-0.265 × 0.279) + (-0.186 × 0.034) + (0.163 × -0.183) = 2.929
+tactical_thinking              |      2.542 |      2.542 | (1.037 × 0.912) + (0.661 × 0.511) + (0.213 × 0.626) + (-0.793 × -0.523) + (-0.223 × -1.754) + (1.193 × 0.279) + (-0.206 × 0.034) + (0.036 × -0.183) = 2.542
+weight_advantage               |      2.488 |      2.488 | (1.066 × 0.912) + (-0.935 × 0.511) + (-0.745 × 0.626) + (0.343 × -0.523) + (-1.493 × -1.754) + (-0.382 × 0.279) + (1.414 × 0.034) + (-0.433 × -0.183) = 2.488
+patience                       |     -2.471 |      2.471 | (-2.583 × 0.912) + (1.270 × 0.511) + (-0.624 × 0.626) + (-0.748 × -0.523) + (0.549 × -1.754) + (0.169 × 0.279) + (0.385 × 0.034) + (-0.753 × -0.183) = -2.471
+
+================================================================================
+
+CLUSTER 3 - 7 sports (7.8%)
+--------------------------------------------------------------------------------
+Attribute                      |      Score |    |Score| | Calculation
+-------------------------------+------------+------------+-----------------------------------------
+accessibility                  |     -8.828 |      8.828 | (-1.050 × -0.528) + (-1.853 × 1.349) + (-3.376 × 1.685) + (-0.826 × -0.031) + (-0.551 × 1.059) + (0.263 × -0.602) + (0.293 × -1.047) + (-1.253 × 0.137) = -8.828
+height_advantage               |     -6.564 |      6.564 | (0.632 × -0.528) + (-0.420 × 1.349) + (-1.091 × 1.685) + (0.179 × -0.031) + (-0.906 × 1.059) + (0.424 × -0.602) + (2.403 × -1.047) + (-0.649 × 0.137) = -6.564
+social_interaction             |     -6.437 |      6.437 | (-0.145 × -0.528) + (-1.096 × 1.349) + (-1.869 × 1.685) + (-0.572 × -0.031) + (0.039 × 1.059) + (3.014 × -0.602) + (0.113 × -1.047) + (-0.097 × 0.137) = -6.437
+weight_advantage               |     -5.983 |      5.983 | (1.066 × -0.528) + (-0.935 × 1.349) + (-0.745 × 1.685) + (0.343 × -0.031) + (-1.493 × 1.059) + (-0.382 × -0.602) + (1.414 × -1.047) + (-0.433 × 0.137) = -5.983
+height                         |     -5.707 |      5.707 | (-0.029 × -0.528) + (-0.517 × 1.349) + (-1.176 × 1.685) + (-1.405 × -0.031) + (0.328 × 1.059) + (0.477 × -0.602) + (2.982 × -1.047) + (-0.179 × 0.137) = -5.707
+cultural_popularity            |     -5.386 |      5.386 | (-0.195 × -0.528) + (-1.122 × 1.349) + (-2.247 × 1.685) + (-0.333 × -0.031) + (-0.302 × 1.059) + (0.371 × -0.602) + (-0.271 × -1.047) + (0.444 × 0.137) = -5.386
+fearlessness                   |      5.370 |      5.370 | (-0.136 × -0.528) + (-0.152 × 1.349) + (1.953 × 1.685) + (0.406 × -0.031) + (0.825 × 1.059) + (-0.893 × -0.602) + (-0.757 × -1.047) + (0.158 × 0.137) = 5.370
+risk_tolerance                 |      5.315 |      5.315 | (0.067 × -0.528) + (-0.030 × 1.349) + (2.022 × 1.685) + (0.153 × -0.031) + (0.813 × 1.059) + (-1.164 × -0.602) + (-0.373 × -1.047) + (0.279 × 0.137) = 5.315
+weight                         |     -5.080 |      5.080 | (-0.399 × -0.528) + (-0.737 × 1.349) + (-0.310 × 1.685) + (-1.481 × -0.031) + (-0.708 × 1.059) + (-0.011 × -0.602) + (2.904 × -1.047) + (-0.267 × 0.137) = -5.080
+difficulty_to_organize         |      4.917 |      4.917 | (-0.625 × -0.528) + (0.101 × 1.349) + (1.597 × 1.685) + (0.078 × -0.031) + (1.119 × 1.059) + (0.547 × -0.602) + (-0.677 × -1.047) + (1.429 × 0.137) = 4.917
+
+================================================================================
+
+CLUSTER 4 - 5 sports (5.6%)
+--------------------------------------------------------------------------------
+Attribute                      |      Score |    |Score| | Calculation
+-------------------------------+------------+------------+-----------------------------------------
+flexibility                    |      8.521 |      8.521 | (-0.107 × -0.333) + (-1.105 × -0.218) + (-0.445 × 0.276) + (3.061 × 2.296) + (-0.892 × -0.883) + (-0.402 × 0.051) + (-1.104 × -0.467) + (-0.513 × -0.109) = 8.521
+balance                        |      6.803 |      6.803 | (-0.246 × -0.333) + (0.243 × -0.218) + (-0.031 × 0.276) + (2.680 × 2.296) + (-0.439 × -0.883) + (-0.759 × 0.051) + (-0.669 × -0.467) + (0.312 × -0.109) = 6.803
+rhythm_musicality              |      6.296 |      6.296 | (-0.001 × -0.333) + (-0.336 × -0.218) + (0.534 × 0.276) + (2.289 × 2.296) + (-0.029 × -0.883) + (-0.332 × 0.051) + (-1.634 × -0.467) + (-0.418 × -0.109) = 6.296
+height                         |     -5.066 |      5.066 | (-0.029 × -0.333) + (-0.517 × -0.218) + (-1.176 × 0.276) + (-1.405 × 2.296) + (0.328 × -0.883) + (0.477 × 0.051) + (2.982 × -0.467) + (-0.179 × -0.109) = -5.066
+weather_sensitivity            |     -5.018 |      5.018 | (-0.892 × -0.333) + (-1.302 × -0.218) + (0.150 × 0.276) + (-1.176 × 2.296) + (3.568 × -0.883) + (-0.686 × 0.051) + (-0.711 × -0.467) + (0.788 × -0.109) = -5.018
+vision_range                   |     -4.822 |      4.822 | (-0.236 × -0.333) + (1.190 × -0.218) + (-0.029 × 0.276) + (-1.855 × 2.296) + (0.433 × -0.883) + (0.045 × 0.051) + (-0.003 × -0.467) + (-0.045 × -0.109) = -4.822
+grip_strength                  |      4.226 |      4.226 | (1.024 × -0.333) + (-0.470 × -0.218) + (0.382 × 0.276) + (1.784 × 2.296) + (-0.118 × -0.883) + (-0.097 × 0.051) + (-0.357 × -0.467) + (0.029 × -0.109) = 4.226
+weight                         |     -3.894 |      3.894 | (-0.399 × -0.333) + (-0.737 × -0.218) + (-0.310 × 0.276) + (-1.481 × 2.296) + (-0.708 × -0.883) + (-0.011 × 0.051) + (2.904 × -0.467) + (-0.267 × -0.109) = -3.894
+seasonality                    |     -3.434 |      3.434 | (-0.856 × -0.333) + (-1.120 × -0.218) + (0.427 × 0.276) + (-0.619 × 2.296) + (3.170 × -0.883) + (-0.128 × 0.051) + (-0.538 × -0.467) + (0.944 × -0.109) = -3.434
+coordination                   |      2.773 |      2.773 | (-0.286 × -0.333) + (1.588 × -0.218) + (0.060 × 0.276) + (1.102 × 2.296) + (-0.650 × -0.883) + (0.462 × 0.051) + (0.423 × -0.467) + (-0.697 × -0.109) = 2.773
+
+================================================================================
+
+CLUSTER 5 - 11 sports (12.2%)
+--------------------------------------------------------------------------------
+Attribute                      |      Score |    |Score| | Calculation
+-------------------------------+------------+------------+-----------------------------------------
+solo_practicability            |    -10.023 |     10.023 | (-2.113 × 0.533) + (-1.828 × 0.684) + (-0.882 × -0.141) + (-0.648 × -0.276) + (-0.340 × 0.383) + (-3.909 × 1.493) + (-1.564 × 0.965) + (-0.897 × 0.527) = -10.023
+social_interaction             |      4.168 |      4.168 | (-0.145 × 0.533) + (-1.096 × 0.684) + (-1.869 × -0.141) + (-0.572 × -0.276) + (0.039 × 0.383) + (3.014 × 1.493) + (0.113 × 0.965) + (-0.097 × 0.527) = 4.168
+fun_factor                     |     -4.131 |      4.131 | (-0.051 × 0.533) + (-0.459 × 0.684) + (0.521 × -0.141) + (0.576 × -0.276) + (0.761 × 0.383) + (-0.406 × 1.493) + (-2.163 × 0.965) + (-2.197 × 0.527) = -4.131
+flexibility                    |     -3.872 |      3.872 | (-0.107 × 0.533) + (-1.105 × 0.684) + (-0.445 × -0.141) + (3.061 × -0.276) + (-0.892 × 0.383) + (-0.402 × 1.493) + (-1.104 × 0.965) + (-0.513 × 0.527) = -3.872
+height                         |      3.805 |      3.805 | (-0.029 × 0.533) + (-0.517 × 0.684) + (-1.176 × -0.141) + (-1.405 × -0.276) + (0.328 × 0.383) + (0.477 × 1.493) + (2.982 × 0.965) + (-0.179 × 0.527) = 3.805
+contact_level                  |      3.615 |      3.615 | (0.487 × 0.533) + (-0.134 × 0.684) + (-0.005 × -0.141) + (-1.133 × -0.276) + (-1.705 × 0.383) + (1.965 × 1.493) + (1.163 × 0.965) + (-0.509 × 0.527) = 3.615
+rhythm_musicality              |     -3.240 |      3.240 | (-0.001 × 0.533) + (-0.336 × 0.684) + (0.534 × -0.141) + (2.289 × -0.276) + (-0.029 × 0.383) + (-0.332 × 1.493) + (-1.634 × 0.965) + (-0.418 × 0.527) = -3.240
+tactical_thinking              |      2.710 |      2.710 | (1.037 × 0.533) + (0.661 × 0.684) + (0.213 × -0.141) + (-0.793 × -0.276) + (-0.223 × 0.383) + (1.193 × 1.493) + (-0.206 × 0.965) + (0.036 × 0.527) = 2.710
+balance                        |     -2.482 |      2.482 | (-0.246 × 0.533) + (0.243 × 0.684) + (-0.031 × -0.141) + (2.680 × -0.276) + (-0.439 × 0.383) + (-0.759 × 1.493) + (-0.669 × 0.965) + (0.312 × 0.527) = -2.482
+height_advantage               |      2.417 |      2.417 | (0.632 × 0.533) + (-0.420 × 0.684) + (-1.091 × -0.141) + (0.179 × -0.276) + (-0.906 × 0.383) + (0.424 × 1.493) + (2.403 × 0.965) + (-0.649 × 0.527) = 2.417
+
+================================================================================
+
+CLUSTER 6 - 9 sports (10.0%)
+--------------------------------------------------------------------------------
+Attribute                      |      Score |    |Score| | Calculation
+-------------------------------+------------+------------+-----------------------------------------
+social_interaction             |      3.706 |      3.706 | (-0.145 × 0.104) + (-1.096 × -0.297) + (-1.869 × -0.694) + (-0.572 × -0.397) + (0.039 × 0.295) + (3.014 × 0.614) + (0.113 × -0.332) + (-0.097 × -0.480) = 3.706
+accessibility                  |      3.616 |      3.616 | (-1.050 × 0.104) + (-1.853 × -0.297) + (-3.376 × -0.694) + (-0.826 × -0.397) + (-0.551 × 0.295) + (0.263 × 0.614) + (0.293 × -0.332) + (-1.253 × -0.480) = 3.616
+cultural_popularity            |      2.021 |      2.021 | (-0.195 × 0.104) + (-1.122 × -0.297) + (-2.247 × -0.694) + (-0.333 × -0.397) + (-0.302 × 0.295) + (0.371 × 0.614) + (-0.271 × -0.332) + (0.444 × -0.480) = 2.021
+mental_focus                   |     -2.004 |      2.004 | (-1.152 × 0.104) + (1.559 × -0.297) + (0.143 × -0.694) + (-0.241 × -0.397) + (-1.195 × 0.295) + (-1.155 × 0.614) + (-0.711 × -0.332) + (1.235 × -0.480) = -2.004
+risk_tolerance                 |     -1.932 |      1.932 | (0.067 × 0.104) + (-0.030 × -0.297) + (2.022 × -0.694) + (0.153 × -0.397) + (0.813 × 0.295) + (-1.164 × 0.614) + (-0.373 × -0.332) + (0.279 × -0.480) = -1.932
+cognitive_load                 |     -1.889 |      1.889 | (-0.657 × 0.104) + (1.436 × -0.297) + (0.333 × -0.694) + (-0.843 × -0.397) + (-1.794 × 0.295) + (-1.234 × 0.614) + (-0.916 × -0.332) + (1.072 × -0.480) = -1.889
+cost_category                  |     -1.842 |      1.842 | (-0.950 × 0.104) + (-0.450 × -0.297) + (0.309 × -0.694) + (-0.050 × -0.397) + (0.286 × 0.295) + (-1.019 × 0.614) + (-0.493 × -0.332) + (2.721 × -0.480) = -1.842
+balance                        |     -1.665 |      1.665 | (-0.246 × 0.104) + (0.243 × -0.297) + (-0.031 × -0.694) + (2.680 × -0.397) + (-0.439 × 0.295) + (-0.759 × 0.614) + (-0.669 × -0.332) + (0.312 × -0.480) = -1.665
+fearlessness                   |     -1.615 |      1.615 | (-0.136 × 0.104) + (-0.152 × -0.297) + (1.953 × -0.694) + (0.406 × -0.397) + (0.825 × 0.295) + (-0.893 × 0.614) + (-0.757 × -0.332) + (0.158 × -0.480) = -1.615
+learning_curve                 |     -1.576 |      1.576 | (-0.365 × 0.104) + (1.311 × -0.297) + (0.972 × -0.694) + (-0.078 × -0.397) + (-0.793 × 0.295) + (-0.351 × 0.614) + (-0.025 × -0.332) + (0.133 × -0.480) = -1.576
+
+================================================================================
+
+CLUSTER 7 - 10 sports (11.1%)
+--------------------------------------------------------------------------------
+Attribute                      |      Score |    |Score| | Calculation
+-------------------------------+------------+------------+-----------------------------------------
+contact_level                  |     -3.291 |      3.291 | (0.487 × 0.939) + (-0.134 × 0.012) + (-0.005 × -0.153) + (-1.133 × 0.031) + (-1.705 × 0.800) + (1.965 × -0.999) + (1.163 × -0.547) + (-0.509 × -0.492) = -3.291
+fun_factor                     |      3.163 |      3.163 | (-0.051 × 0.939) + (-0.459 × 0.012) + (0.521 × -0.153) + (0.576 × 0.031) + (0.761 × 0.800) + (-0.406 × -0.999) + (-2.163 × -0.547) + (-2.197 × -0.492) = 3.163
+solo_practicability            |      3.038 |      3.038 | (-2.113 × 0.939) + (-1.828 × 0.012) + (-0.882 × -0.153) + (-0.648 × 0.031) + (-0.340 × 0.800) + (-3.909 × -0.999) + (-1.564 × -0.547) + (-0.897 × -0.492) = 3.038
+social_interaction             |     -2.874 |      2.874 | (-0.145 × 0.939) + (-1.096 × 0.012) + (-1.869 × -0.153) + (-0.572 × 0.031) + (0.039 × 0.800) + (3.014 × -0.999) + (0.113 × -0.547) + (-0.097 × -0.492) = -2.874
+weather_sensitivity            |      2.626 |      2.626 | (-0.892 × 0.939) + (-1.302 × 0.012) + (0.150 × -0.153) + (-1.176 × 0.031) + (3.568 × 0.800) + (-0.686 × -0.999) + (-0.711 × -0.547) + (0.788 × -0.492) = 2.626
+weight                         |     -2.393 |      2.393 | (-0.399 × 0.939) + (-0.737 × 0.012) + (-0.310 × -0.153) + (-1.481 × 0.031) + (-0.708 × 0.800) + (-0.011 × -0.999) + (2.904 × -0.547) + (-0.267 × -0.492) = -2.393
+coach_required                 |     -2.194 |      2.194 | (-0.289 × 0.939) + (0.670 × 0.012) + (1.085 × -0.153) + (-0.249 × 0.031) + (-0.342 × 0.800) + (1.345 × -0.999) + (0.239 × -0.547) + (0.018 × -0.492) = -2.194
+speed                          |      2.060 |      2.060 | (1.730 × 0.939) + (-0.370 × 0.012) + (-0.209 × -0.153) + (-0.447 × 0.031) + (0.465 × 0.800) + (0.111 × -0.999) + (0.056 × -0.547) + (-0.388 × -0.492) = 2.060
+avg_session_duration_hours     |     -1.980 |      1.980 | (-1.174 × 0.939) + (-1.328 × 0.012) + (-0.527 × -0.153) + (-0.914 × 0.031) + (0.761 × 0.800) + (0.201 × -0.999) + (-0.391 × -0.547) + (3.119 × -0.492) = -1.980
+patience                       |     -1.907 |      1.907 | (-2.583 × 0.939) + (1.270 × 0.012) + (-0.624 × -0.153) + (-0.748 × 0.031) + (0.549 × 0.800) + (0.169 × -0.999) + (0.385 × -0.547) + (-0.753 × -0.492) = -1.907
+
+================================================================================
